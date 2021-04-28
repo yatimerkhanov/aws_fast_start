@@ -7,4 +7,6 @@ terraform init
 
 terraform apply
 
-ssh -i ~/.ssh/id_rsa ec2-user@52.66.190.155
+ansible-playbook apache.yml -i hosts 
+
+Check results http://13.233.165.119/

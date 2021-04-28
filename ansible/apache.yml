@@ -1,0 +1,35 @@
+---
+- hosts: apache
+  gather_facts: false
+  become: true
+  tasks:
+  - name: Install Apache
+    yum: 
+      pkg: httpd
+      state: latest
+
+  - name: Gather some facts
+    setup:
+      filter: ansible_date_time
+
+  - name: Copying the index file
+    template: 
+      src: index.html.j2
+      dest: /var/www/html/index.html
+      owner: apache
+      group: apache
+      mode: 0644
+
+  - name: Enable Apache on System Boot
+    service: 
+      name: httpd
+      enabled: yes
+
+    notify:
+    - start apache
+
+  handlers:
+    - name: start apache
+      service:
+        name: httpd
+        state: started
