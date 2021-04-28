@@ -1,6 +1,5 @@
 # aws_fast_start
-Simple example deployment EC2 server in AWS
-https://harshitdawar.medium.com/launching-a-vpc-with-public-private-subnet-nat-gateway-in-aws-using-terraform-99950c671ce9
+Simple example deploy EC2 server with Apache in AWS
 
 cd terraform
 
@@ -8,6 +7,4 @@ terraform init
 
 terraform apply
 
-
-
-ssh -i ~/.ssh/id_rsa ec2-user@65.2.126.106
+ssh -i ~/.ssh/id_rsa ec2-user@52.66.190.155
