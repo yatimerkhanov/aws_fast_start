@@ -7,6 +7,8 @@ terraform init
 
 terraform apply
 
+cd ../ansible
+
 ansible-playbook apache.yml -i hosts 
 
 Check results http://13.233.165.119/
